@@ -21,7 +21,7 @@ tags:
 
 ## HOST Virtualization
 
-![avatar](cloudNetworkingClass\server-virtual.png)
+<img width="420" height="200" src="cloudNetworkingClass\server-virtual.png"/>
 
 主要介绍了HOST virtualization的现状
 
