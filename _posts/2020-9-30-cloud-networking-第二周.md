@@ -21,7 +21,7 @@ tags:
 
 ## HOST Virtualization
 
-<img src="cloudNetworkingClass\server-virtual.png"/>
+<img src="/img/cloudNetworkingClass/server-virtual.png"/>
 
 主要介绍了HOST virtualization的现状
 
@@ -29,7 +29,7 @@ tags:
 
 - 2、container base ：通过Namespace划分网络，通过NAT访问外部网络
 
-<img src="\img\cloudNetworkingClass\docker-network.png"/>
+<img src="/img/cloudNetworkingClass/docker-network.png"/>
 
 
 ## 问题： 如何处理数据包？
