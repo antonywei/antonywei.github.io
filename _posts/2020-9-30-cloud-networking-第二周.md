@@ -1,13 +1,13 @@
 ---
 layout:     post
 title:      cloud Networking 第二周 
-subtitle:   浅谈 Tagged Pointer
+subtitle:   Host网络和CC
 date:       2020-9-30
-author:     BY
+author:     haoran
 header-img: img/post-bg-universe.jpg
 catalog: true
 tags: 
-	- CloudNetworkingClass
+	- 云网络课程
 ---
 
 > cloud networking 笔记
