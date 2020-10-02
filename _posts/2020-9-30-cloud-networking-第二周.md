@@ -7,7 +7,7 @@ author:     BY
 header-img: img/post-bg-universe.jpg
 catalog: true
 tags: 
-	- cloud networking class
+	- CloudNetworkingClass
 ---
 
 > cloud networking 笔记
