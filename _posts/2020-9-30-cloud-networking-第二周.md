@@ -29,7 +29,7 @@ tags:
 
 - 2、container base ：通过Namespace划分网络，通过NAT访问外部网络
 
-![avatar](cloudNetworkingClass\docker-network.png)
+<img src="cloudNetworkingClass\docker-network.png"/>
 
 
 ## 问题： 如何处理数据包？
@@ -48,7 +48,7 @@ tags:
 
 常用的办法：SR-IOV（single-root I/O virtualization）
 
-![avatar](cloudNetworkingClass\SR-IOV.png)
+<img src="cloudNetworkingClass\SR-IOV.png"/>
 
 图中的pNIC是一张支持硬件虚拟化网卡，网卡可以提供一些简单诸如转发的虚拟功能，此时，通过将VM和VF的映射，实现VM对网卡资源的直接DMA(direct memory access）访问。pNic通过一个简单的L2 switch来实现流量的转发。
 
@@ -65,7 +65,7 @@ tags:
 
 案例：OpenVswitch
 
-![avatar](cloudNetworkingClass\ovs-framework.png)
+<img src="cloudNetworkingClass\ovs-framework.png"/>
 
 OVS同时运行在Userspace和kernel space
 
