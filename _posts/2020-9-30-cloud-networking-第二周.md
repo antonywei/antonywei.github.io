@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      cloud Networking 第二周 
+title:      cloud Networking 第二周笔记：Host网络和DC中的拥塞控制
 subtitle:   Host网络和CC
 date:       2020-9-30
 author:     haoran
@@ -8,7 +8,6 @@ header-img: img/post-bg-universe.jpg
 catalog: true
 tags: 
     - 云网络课程
-    - 云网络基础
     - 路由
     - 网络虚拟化
 ---

@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      cloud Networking 第三周 
+title:      cloud Networking 第三周笔记： SDN网络
 subtitle:   SDN网络
 date:       2020-10-12
 author:     haoran
@@ -8,7 +8,7 @@ header-img: img/post-bg-universe.jpg
 catalog: true
 tags: 
     - 云网络课程
-    - 云网络基础
+    - SDN
 ---
 
 > cloud networking 笔记
