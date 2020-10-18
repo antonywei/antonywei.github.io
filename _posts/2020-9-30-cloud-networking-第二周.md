@@ -10,6 +10,7 @@ tags:
     - 云网络课程
     - 路由
     - 网络虚拟化
+typora-root-url: ..
 ---
 
 > cloud networking 笔记

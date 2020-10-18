@@ -9,6 +9,7 @@ catalog: true
 tags: 
     - 云网络课程
     - SDN
+typora-root-url: ..
 ---
 
 > cloud networking 笔记
@@ -25,6 +26,8 @@ tags:
 
 <img src="/img/cloudNetworkingClass/image-20201012204550495.png"/>
 
+
+
 网络的问题（大方向上的）：
 
 - 复杂的、分布式带来的问题。
@@ -35,11 +38,11 @@ tags:
 
 新的目标
 
-- 将转发和控制分离
-- 
-<img src="/img/cloudNetworkingClass/image-20201012205043820.png"/>
+- 将转发和控制分离<img src="/img/cloudNetworkingClass/image-20201012205043820.png"/>
 
 <img src="/img/cloudNetworkingClass/image-20201012205326292.png"/>
+
+
 
 
 一个简单的NOX控制器的例子，Match - action -安装规则
@@ -118,7 +121,7 @@ openflow（2008）
 
 ### SDN的落地用例
 
-	#### Cloud virtualization
+#### Cloud virtualization
 
 - 多租户的虚拟网络
 - 动态的迁移和部署VM
@@ -128,7 +131,7 @@ openflow（2008）
 - 接近100%的利用率
 - 避免严重的拥塞发生
 
-Key characteristics of the above use case
+#### Key characteristics of the above use case
 
 - 用更少的硬件设施来解析部署
 - Exsting solutions aren’t just inconvenient， they don’t work
