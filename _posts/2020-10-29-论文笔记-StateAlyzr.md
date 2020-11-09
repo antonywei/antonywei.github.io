@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      【论文笔记】Paving the Way for NFV: Simplifying MiddleboxModifications using StateAlyzr
-Junaid
 subtitle:   NFV state management
 date:       2020-10-29
 author:     haoran
@@ -10,11 +9,12 @@ catalog: true
 tags: 
     - NFV
     - Network stack
+    - paper note
 
 typora-root-url: ..
-
-
 ---
+
+
 
 > Paving the Way for NFV: Simplifying MiddleboxModifications using StateAlyzr
 > Junaid 笔记

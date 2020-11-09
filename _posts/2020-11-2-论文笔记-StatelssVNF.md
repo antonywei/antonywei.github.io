@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      【论文笔记】Stateless Network Functions: Breaking the Tight Coupling of State and Processing
-subtitle:   stateless VNF
+title:      【论文笔记】Stateless Network Functions
+subtitle:   Stateless Network Functions: Breaking the Tight Coupling of State and Processing
 date:       2020-11-2
 author:     haoran
 header-img: img/lake.png
@@ -14,6 +14,8 @@ typora-root-url: ..
 
 ---
 
+
+
 ## Stateless Network Functions: Breaking the Tight Coupling of State and Processing
 
 ### 简介
@@ -23,6 +25,7 @@ typora-root-url: ..
 - DPDK处理数据包
 - RAMCloud数据库 over RDMA存储状态
 - 网络编排器对其进行控制
+
 
 ### Intro 
 
@@ -45,16 +48,21 @@ typora-root-url: ..
   - 支持多径传输
   
   ![image-20201105170450289](/img/cloudNetworkingClass/2020-11-2-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-StatelssVNF/image-20201105170450289.png)
-  
-- 几个特性（motivation）：
 
-  - 部分状态是要求是逐个数据包更新的，只需要存储这部分频繁更新的状态即可
+## Motivation：
 
-  - 静态的状态可以搭载在配置文件中随时启动
+### 关于状态的问题：
 
-  - Finally, network functions share a common pipeline design where there is typically a lookup operation when the packet is first being processed, and sometimes a write operation after the packet has been processed（大部分操作以读为主，少部分操作以写为主，所以不需要特别长的时间）
+  - 静态的状态可以搭载在配置文件中随时启动（如，防火墙的规则等）
 
-    原文内容
+  - 动态的状态，需要随流量变化而变化的：
+
+    - 和实例状态相关的（如配置等）
+    - 和网络流量状态相关的：大部分操作以读为主，写入为辅（例如某一条流只有在创建的第一个包，才需要对其进行调整）
+
+    - （原文）Finally, network functions share a common pipeline design where there is typically a lookup operation when the packet is first being processed, and sometimes a write operation after the packet has been processed
+
+    原文内容： 
 
   ![image-20201105171825844](/img/cloudNetworkingClass/2020-11-2-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-StatelssVNF/image-20201105171825844.png)
 
@@ -66,7 +74,36 @@ typora-root-url: ..
 
   对于一条流来说，只有第一个数据包需要解决flow mapping的问题，其他的只需要读即可。
 
-  
+
+
+
+
+## 问题的场景分析 （这部分比较有意思，影响到之后的设计）
+
+### 处理实例故障的问题
+
+![image-20201106163505112](/img/cloudNetworkingClass/2020-11-2-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-StatelssVNF/image-20201106163505112.png)
+
+- 发生故障后新的实例无法同步状态，但采用备份的办法会导致开销增加
+
+
+
+
+
+### 弹性伸缩的问题
+
+![image-20201106164623269](/img/cloudNetworkingClass/2020-11-2-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-StatelssVNF/image-20201106164623269.png)
+
+- 需要等待流完成以后或者状态迁移完毕后才能执行弹性伸缩
+
+### 多径传输的问题
+
+![image-20201106164853408](/img/cloudNetworkingClass/2020-11-2-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-StatelssVNF/image-20201106164853408.png)
+
+- 状态不一致带来的问题：A防火墙通过了SYN，但是ack走了B路径的实例，但是B由于没有匹配规则将ACK的流量ban了
+
+
+
 
 ## Architecture
 
@@ -94,4 +131,6 @@ typora-root-url: ..
   ![image-20201105173937046](/img/cloudNetworkingClass/2020-11-2-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-StatelssVNF/image-20201105173937046.png)
 
   
+
+## 
 
