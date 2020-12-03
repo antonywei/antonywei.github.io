@@ -113,14 +113,21 @@ typora-root-url: ..
 
 - Data store: 存储状态
 
-  - RAMcloud  system （Redis 一种内存云的Key value store）
+  - RAMcloud  system （Redis 一种内存云的Key value store）,它的所有数据都保存到内存中，为了故障恢复RAMCloud会将日志和数据的备份持久化到普通硬盘中。
+
+    - 时延：一个进程在同一个数据中心中的存储服务器上读取百字节5us，写入百字节10us。
+
+    - 性能：一台多核存储服务器每秒可以服务至少100万次小读取请求
+
+    - 扩展性：可以支持1000+台服务器组成RAMCloud，提供100+TB存储
+
   - Extend with timer
 
 - NF host：处理数据包
 
   - DPDK + SRIOV提供高速的处理服务
   - 利用容器进行封装
-  - Infiniband to Data store (DPDK)
+  - Infiniband to Data storage （RDMA)
 
   ![image-20201105173730418](/img/cloudNetworkingClass/2020-11-2-%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-StatelssVNF/image-20201105173730418.png)
 
@@ -132,5 +139,11 @@ typora-root-url: ..
 
   
 
-## 
+- 其他的加速技术
+  - Batching：在利用内存数据库读写状态时，开销较小，但是通过网卡传输相应的操作可能会带来额外的开销，因此将到达的请求进行聚合为一个Batch，再批量进行处理(利用内存数据库的并行读写)
+  - Pre-allocating a pool of buffers：预先分配内存
+
+
+
+
 
